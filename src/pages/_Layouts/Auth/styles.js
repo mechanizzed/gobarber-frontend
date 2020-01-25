@@ -54,7 +54,7 @@ export const Content = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.05, '#20B2AA')};
+        background: ${darken(0.08, '#20B2AA')};
       }
     }
 
