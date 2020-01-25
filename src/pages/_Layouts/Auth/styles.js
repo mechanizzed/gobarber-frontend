@@ -33,6 +33,14 @@ export const Content = styled.div`
       }
     }
 
+    span {
+      margin: -10px 0 20px 0;
+      background: #f64c75;
+      color: #fff;
+      padding: 10px;
+      font-size: 12px;
+    }
+
     button {
       margin: 10px 0;
       background: #050e15;
