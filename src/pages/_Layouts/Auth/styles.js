@@ -3,7 +3,7 @@ import { darken } from 'polished';
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: radial-gradient(circle, #212c37, #050e15);
+  background: radial-gradient(circle, #0c1c28, #050e15);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,17 +43,18 @@ export const Content = styled.div`
 
     button {
       margin: 10px 0;
-      background: #050e15;
+      background: #20b2aa;
       border: 0;
       border-radius: 4px;
       height: 44px;
       color: #fff;
       font-size: 15px;
+      font-weight: 700;
       text-transform: uppercase;
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.03, '#050e15')};
+        background: ${darken(0.05, '#20B2AA')};
       }
     }
 
