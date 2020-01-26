@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 // icon
 import { MdDashboard, MdPerson } from 'react-icons/md';
 
+// components
+import Notifications from '../Notifications';
+
 // logo
 import logo from '../../assets/images/logo_inside.svg';
 
@@ -20,6 +23,7 @@ export default function Header() {
           </Link>
         </nav>
         <aside>
+          <Notifications />
           <Profile>
             <div>
               <strong>Nome user</strong>
