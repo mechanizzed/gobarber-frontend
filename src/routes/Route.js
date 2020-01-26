@@ -7,7 +7,7 @@ import AuthLayout from '../pages/_Layouts/Auth';
 import DefaultLayout from '../pages/_Layouts/Default';
 
 // store
-import store from '../store';
+import { store } from '../store';
 
 export default function RouteWrapper({
   component: Component,
