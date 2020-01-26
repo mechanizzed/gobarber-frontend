@@ -6,12 +6,15 @@ import PropTypes from 'prop-types';
 import AuthLayout from '../pages/_Layouts/Auth';
 import DefaultLayout from '../pages/_Layouts/Default';
 
+// store
+import store from '../store';
+
 export default function RouteWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = false;
+  const { signed } = store.getState().auth;
 
   if (!signed && isPrivate) {
     return <Redirect to="/" />;
