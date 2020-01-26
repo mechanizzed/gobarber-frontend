@@ -41,6 +41,9 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .mr-05{
+    margin-right: 5px;
+  }
   .mr-1{
     margin-right: 10px;
   }
