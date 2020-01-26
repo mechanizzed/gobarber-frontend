@@ -42,6 +42,10 @@ export const Content = styled.div`
     }
 
     button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
       margin: 10px 0;
       background: #20b2aa;
       border: 0;

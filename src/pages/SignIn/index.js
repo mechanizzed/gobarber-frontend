@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+
+// ReactLoading
+import ReactLoading from 'react-loading';
+
+// Icons
+import { IoIosLogIn } from 'react-icons/io';
 
 import { signInRequest } from '../../store/modules/auth/actions';
 
@@ -21,6 +27,9 @@ const schema = Yup.object().shape({
 
 export default function SignIn() {
   const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
+
+  console.tron.log(loading);
 
   function handleSubmit({ email, password }) {
     dispatch(signInRequest(email, password));
@@ -34,7 +43,15 @@ export default function SignIn() {
         <Input name="email" type="email" placeholder="E-mail" />
         <Input name="password" type="password" placeholder="Senha" />
 
-        <button type="submit">Entrar</button>
+        <button type="submit">
+          {loading ? (
+            <ReactLoading type="bubbles" color="#fff" height={40} width={40} />
+          ) : (
+            <>
+              <IoIosLogIn size={20} className="mr-1" /> Entrar
+            </>
+          )}
+        </button>
 
         <Link to="/register">Não tem uma conta? Registre-se agora</Link>
       </Form>

@@ -39,4 +39,11 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .mr-1{
+    margin-right: 10px;
+  }
+  .mr-2{
+    margin-right: 20px;
+  }
+
 `;

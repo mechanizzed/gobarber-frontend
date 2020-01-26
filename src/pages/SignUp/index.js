@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
+// ReactLoading
+import ReactLoading from 'react-loading';
+
+// Icons
+import { IoMdPersonAdd } from 'react-icons/io';
+
 // Logo
 import logo from '../../assets/images/logo.svg';
 
@@ -31,7 +37,9 @@ export default function SignUp() {
         <Input name="email" type="email" placeholder="E-mail" />
         <Input name="password" type="password" placeholder="Senha" />
 
-        <button type="submit">Criar conta</button>
+        <button type="submit">
+          <IoMdPersonAdd size={20} className="mr-1" /> Criar conta
+        </button>
 
         <Link to="/">Já tenho uma conta</Link>
       </Form>
