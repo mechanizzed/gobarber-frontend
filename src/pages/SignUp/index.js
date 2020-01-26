@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
 // ReactLoading
 import ReactLoading from 'react-loading';
 
-// Icons
 import { IoMdPersonAdd } from 'react-icons/io';
+import { signUpRequest } from '../../store/modules/auth/actions';
+
+// Icons
 
 // Logo
 import logo from '../../assets/images/logo.svg';
@@ -25,8 +29,11 @@ const schema = Yup.object().shape({
 });
 
 export default function SignUp() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+  const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
+
+  function handleSubmit({ name, email, password }) {
+    dispatch(signUpRequest(name, email, password));
   }
   return (
     <>
@@ -38,7 +45,13 @@ export default function SignUp() {
         <Input name="password" type="password" placeholder="Senha" />
 
         <button type="submit">
-          <IoMdPersonAdd size={20} className="mr-1" /> Criar conta
+          {loading ? (
+            <ReactLoading type="bubbles" color="#fff" height={40} width={40} />
+          ) : (
+            <>
+              <IoMdPersonAdd size={20} className="mr-1" /> Criar conta
+            </>
+          )}
         </button>
 
         <Link to="/">Já tenho uma conta</Link>

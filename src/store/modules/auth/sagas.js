@@ -4,8 +4,11 @@ import api from '../../../services/api';
 import history from '../../../services/history';
 
 // actions
-import { signInSuccess, signFailure } from './actions';
+import { signInSuccess, signFailure, signUpSuccess } from './actions';
 
+/**
+ * SignIn - Login
+ */
 export function* signIn({ payload }) {
   try {
     const { email, password } = payload;
@@ -29,4 +32,30 @@ export function* signIn({ payload }) {
   }
 }
 
-export default all([takeLatest('@auth/SIGN_IN_REQUEST', signIn)]);
+/**
+ * SignUp - Register
+ */
+export function* signUp({ payload }) {
+  try {
+    const { name, email, password } = payload;
+    yield call(api.post, 'users', {
+      name,
+      email,
+      password,
+      provider: true,
+    });
+    toast.success(
+      'Cadastro realizado com successo! Faça login com seus dados para continuar'
+    );
+    yield put(signUpSuccess());
+    history.push('/');
+  } catch (error) {
+    toast.error('Erro ao realizar cadastro');
+    yield put(signFailure());
+  }
+}
+
+export default all([
+  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
+  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+]);
