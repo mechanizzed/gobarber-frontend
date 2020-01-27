@@ -2,11 +2,14 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Wrapper = styled.div`
+  width: 100%;
   height: 100%;
   background: radial-gradient(circle, #0c1c28, #050e15);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: radial-gradient(circle, #0c1c28, #050e15);
+  overflow-y: scroll;
 `;
 
 export const Content = styled.div`

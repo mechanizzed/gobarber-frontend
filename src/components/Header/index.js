@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 // icon
 import { MdDashboard, MdPerson } from 'react-icons/md';
+import { IoMdLogIn } from 'react-icons/io';
 
 // components
 import Notifications from '../Notifications';
@@ -36,6 +37,9 @@ export default function Header() {
               alt="username"
               title="username"
             />
+            <button type="button">
+              <IoMdLogIn /> <span>SAIR</span>
+            </button>
           </Profile>
         </aside>
       </Content>

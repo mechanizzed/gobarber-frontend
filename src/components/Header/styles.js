@@ -69,4 +69,20 @@ export const Profile = styled.div`
     overflow: hidden;
     border-radius: 50%;
   }
+
+  button {
+    display: flex;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    margin-left: 20px;
+    background: transparent;
+
+    span {
+      margin-left: 3px;
+      font-size: 10px;
+      color: #0c1c28;
+      font-weight: 700;
+    }
+  }
 `;
