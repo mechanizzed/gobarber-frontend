@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 // icon
 import { MdDashboard, MdPerson } from 'react-icons/md';
 import { IoMdLogIn } from 'react-icons/io';
+
+import { signOut } from '../../store/modules/auth/actions';
 
 // components
 import Notifications from '../Notifications';
@@ -15,7 +17,13 @@ import logo from '../../assets/images/logo_inside.svg';
 import { Container, Content, Profile } from './styles';
 
 export default function Header() {
+  const dispatch = useDispatch();
   const { profile } = useSelector(state => state.user);
+
+  function handleSignOut() {
+    dispatch(signOut());
+  }
+
   return (
     <Container>
       <Content>
@@ -42,7 +50,7 @@ export default function Header() {
               alt={profile.name}
               title={profile.name}
             />
-            <button type="button">
+            <button type="button" onClick={handleSignOut}>
               <IoMdLogIn /> <span>SAIR</span>
             </button>
           </Profile>
