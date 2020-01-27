@@ -5,6 +5,9 @@ import { MdRefresh } from 'react-icons/md';
 
 import { updateProfileRequest } from '../../store/modules/user/actions';
 
+// component
+import Avatar from './Avatar';
+
 import { Container, FormGroup, Title } from './styles';
 
 export default function Profile() {
@@ -20,6 +23,7 @@ export default function Profile() {
       <Form initialData={profile} onSubmit={handleUpdate}>
         <Title>Dados do perfil</Title>
         <FormGroup>
+          <Avatar name="avatar_id" />
           <Input name="name" placeholder="Nome completo" />
           <Input name="email" type="email" disabled placeholder="E-mail" />
         </FormGroup>
