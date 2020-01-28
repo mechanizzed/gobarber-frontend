@@ -3,6 +3,7 @@ import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   width: 100%;
+  min-height: 100vh;
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
@@ -25,6 +26,9 @@ export const Header = styled.header`
   align-self: center;
   align-items: center;
   align-content: center;
+  background: ${lighten(0.04, '#DEE2E6')};
+  border: 1px solid ${darken(0.02, '#DEE2E6')};
+  padding: 10px;
 
   button {
     border: 0;
@@ -32,9 +36,11 @@ export const Header = styled.header`
   }
 
   strong {
+    display: flex;
+    align-items: center;
     color: #0c1c28;
     font-size: 24px;
-    margin: 0 20px;
+    margin: 0 50px;
   }
 `;
 
